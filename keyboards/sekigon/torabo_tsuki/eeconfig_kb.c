@@ -22,6 +22,7 @@ void eeconfig_init_kb_datablock(void) {
     eeconfig_kb.aml.delay                      = 200;
     eeconfig_kb.scroll.divide                  = 10;
     eeconfig_kb.scroll.options.snap            = 1;
+    eeconfig_kb.battery.mode                   = 1;
     eeconfig_kb.battery.custom.periph_interval = 10;
     eeconfig_kb.battery.custom.periph_sl       = 15;
     eeconfig_kb.pseudo_encoder.divide          = 50;
