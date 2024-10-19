@@ -8,19 +8,20 @@
 void eeconfig_init_kb_datablock(void) {
     memset(&eeconfig_kb, 0, sizeof(eeconfig_kb));
     eeconfig_kb.version                        = EECONFIG_KB_VERSION;
-    eeconfig_kb.cursor.cpi_200                 = (400 / 200) - 1;
+    eeconfig_kb.cursor.cpi_200                 = (600 / 200) - 1;
     eeconfig_kb.cursor.fine_layer              = 0;
     eeconfig_kb.cursor.fine_div                = 1;
     eeconfig_kb.cursor.rough_layer             = 0;
     eeconfig_kb.cursor.rough_mul               = 1;
     eeconfig_kb.cursor.rotate                  = 0;
-    eeconfig_kb.aml.timeout                    = 100;
-    eeconfig_kb.aml.options.enable             = false;
-    eeconfig_kb.aml.layer                      = 1;
+    eeconfig_kb.aml.timeout                    = 500;
+    eeconfig_kb.aml.options.enable             = true;
+    eeconfig_kb.aml.layer                      = 4;
     eeconfig_kb.aml.debounce                   = 25;
     eeconfig_kb.aml.threshold                  = 10;
     eeconfig_kb.aml.delay                      = 200;
-    eeconfig_kb.scroll.divide                  = 1;
+    eeconfig_kb.scroll.divide                  = 10;
+    eeconfig_kb.scroll.options.snap            = 1;
     eeconfig_kb.battery.custom.periph_interval = 10;
     eeconfig_kb.battery.custom.periph_sl       = 15;
     eeconfig_kb.pseudo_encoder.divide          = 50;
@@ -145,7 +146,7 @@ void via_custom_value_command_kb(uint8_t *data, uint8_t length) {
         via_custom_value_command_user(data, length);
         return;
     }
-    
+
     process_custom_value_command(data, length);
 
     via_custom_value_command_user(data, length);

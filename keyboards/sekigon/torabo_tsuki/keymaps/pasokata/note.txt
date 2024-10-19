@@ -1,0 +1,6 @@
+screen /dev/cu.usbmodemvial_f64c2b3c5
+dfu
+
+make sekigon/torabo_tsuki:pasokata:uf2
+
+cp .build/sekigon_torabo_tsuki_pasokata.uf2 /Volumes/BLEMICROPRO/

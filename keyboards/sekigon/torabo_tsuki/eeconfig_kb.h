@@ -3,7 +3,7 @@
 
 #include "quantum.h"
 
-#define EECONFIG_KB_VERSION 4
+#define EECONFIG_KB_VERSION 2
 
 typedef union
 {
